@@ -1,8 +1,12 @@
 
-from urllib2 import (
-    urlopen,
-    URLError,
-)
+try:
+    from urllib2 import (
+        urlopen,
+        URLError,
+    )
+except ImportError:  # PY3
+    from urllib.request import urlopen
+    from urllib.error import URLError
 
 import django
 from django.conf import settings
