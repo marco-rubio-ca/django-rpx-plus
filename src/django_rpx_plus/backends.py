@@ -1,4 +1,8 @@
-import urllib2
+
+from urllib2 import (
+    urlopen,
+    URLError,
+)
 
 import django
 from django.conf import settings
@@ -49,8 +53,8 @@ class RpxBackend:
         }
         #Send and get data from RPX API:
         try:
-            response = urllib2.urlopen(url = RPX_API_AUTH_URL, data = urlencode(args))
-        except urllib2.URLError:
+            response = urlopen(url = RPX_API_AUTH_URL, data = urlencode(args))
+        except URLError:
             #Means we couldn't open the url for some reason.
             #TODO: Provide good error message.
             return None
