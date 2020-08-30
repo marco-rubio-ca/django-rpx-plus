@@ -57,7 +57,7 @@ class RpxBackend:
         }
         #Send and get data from RPX API:
         try:
-            response = urlopen(url = RPX_API_AUTH_URL, data = urlencode(args))
+            response = urlopen(url = RPX_API_AUTH_URL, data = urlencode(args).encode())
         except URLError:
             #Means we couldn't open the url for some reason.
             #TODO: Provide good error message.
