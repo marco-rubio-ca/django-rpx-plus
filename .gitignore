@@ -2,3 +2,8 @@
 *.swp
 *.pyc
 *.egg-info
+.history
+build
+.tox
+dist
+.python-version
