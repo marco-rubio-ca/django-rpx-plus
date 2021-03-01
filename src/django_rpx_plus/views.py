@@ -3,7 +3,11 @@ import django.contrib.auth as auth
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except:
+    from django.urls import reverse
+
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import ugettext_lazy as _
 
@@ -163,7 +167,7 @@ def login(request):
     destination = request.GET.get('destination', settings.LOGIN_REDIRECT_URL)
     if request.user.is_authenticated():
         return redirect(destination)
-    
+
     extra = {'next': destination}
     return render_to_response('django_rpx_plus/login.html', {
                                 'extra': extra,

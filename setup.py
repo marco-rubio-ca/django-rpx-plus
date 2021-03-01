@@ -11,14 +11,17 @@ setup(
     packages=find_packages('src', exclude=['example', 'example.*']),
     package_dir={'' : 'src'},
     include_package_data=True,
-    version='2.0.0',
+    version='2.0.1',
     description='RPX auth support for django',
     author='Michael Huynh',
     author_email='mike@mikexstudios.com',
     license="BSD",
     keywords="janrain django rpx rpxnow",
     url='http://github.com/mikexstudios/django-rpx-plus',
-    install_requires=['django-picklefield'],
+    install_requires=[
+        'Django>=1.11',
+        'django-picklefield==0.3.2'
+    ],
     classifiers=[
         'Programming Language :: Python',
         'Framework :: Django',
