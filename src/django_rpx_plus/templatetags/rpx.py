@@ -2,7 +2,7 @@ import json
 
 from django import template
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 #The reason why we use django's urlencode instead of urllib's urlencode is that
 #django's version can operate on unicode strings.
 from django.utils.http import urlencode
